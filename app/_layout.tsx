@@ -3,7 +3,11 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { DatabaseProvider } from "../src/ui/db-context";
+import { configureNotificationHandler } from "../src/services/notifications";
 import { colors } from "../src/ui/theme";
+
+// Einmalig beim Laden des Moduls: Darstellung von Benachrichtigungen im Vordergrund.
+configureNotificationHandler();
 
 export default function RootLayout() {
   return (

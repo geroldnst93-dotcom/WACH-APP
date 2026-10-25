@@ -12,6 +12,7 @@ import {
   CheckRow,
 } from "../src/ui/components";
 import { useDb } from "../src/ui/db-context";
+import { scheduleDailyReminders } from "../src/services/notifications";
 import { space } from "../src/ui/theme";
 
 const CONTRAINDICATIONS = [
@@ -36,6 +37,12 @@ export default function Onboarding() {
   async function finish() {
     await appState.setContraindication(anyChecked);
     await appState.setOnboardingComplete(true);
+    // Erinnerungen einrichten (fragt ggf. um Berechtigung); Fehler nicht blockierend.
+    try {
+      await scheduleDailyReminders();
+    } catch {
+      // ohne Benachrichtigungen bleibt die App voll nutzbar
+    }
     router.replace("/diary");
   }
 
