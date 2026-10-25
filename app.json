@@ -8,7 +8,13 @@
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "backgroundColor": "#0B1020",
-    "plugins": ["expo-router", "expo-sqlite", "expo-notifications"],
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-notifications",
+      "expo-asset",
+      "expo-font"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "app.wach.cbti"
