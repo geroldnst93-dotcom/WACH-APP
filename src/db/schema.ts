@@ -39,10 +39,23 @@ CREATE TABLE IF NOT EXISTS sleep_days (
 );
 `;
 
+/**
+ * Schlüssel-Wert-Tabelle für nicht ableitbaren App-Zustand
+ * (Onboarding abgeschlossen, Kontraindikations-Flag). Das Schlaffenster steht
+ * hier bewusst NICHT – es wird aus den Tagebuchdaten abgeleitet.
+ */
+export const CREATE_APP_STATE = `
+CREATE TABLE IF NOT EXISTS app_state (
+  key   TEXT PRIMARY KEY NOT NULL,
+  value TEXT
+);
+`;
+
 /** Vollständiges Setup-Skript (PRAGMA + Tabellen). */
 export const SCHEMA_SQL = `
 PRAGMA journal_mode = WAL;
 ${CREATE_SLEEP_DAYS}
+${CREATE_APP_STATE}
 `;
 
 /**
