@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "WACH",
+    "slug": "wach",
+    "scheme": "wach",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "backgroundColor": "#0B1020",
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      "expo-notifications",
+      "expo-asset",
+      "expo-font"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.wach.cbti"
+    },
+    "android": {
+      "package": "app.wach.cbti"
+    }
+  }
+}
